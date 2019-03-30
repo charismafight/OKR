@@ -29,6 +29,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'django_tables2',
     'Objective.apps.ObjectiveConfig',
     'django.contrib.admin',
     'django.contrib.auth',
