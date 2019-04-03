@@ -6,6 +6,8 @@ class Objective(models.Model):
     department = models.CharField(max_length=20)
     objective = models.CharField(max_length=200)
     key_result = models.CharField(max_length=200)
+    self_assessment_score = models.IntegerField(default=0)
+    leader_assessment_score = models.IntegerField(default=0)
 
     def __str__(self):
         return self.objective
