@@ -14,6 +14,5 @@ def index(request):
 
 
 def objective_detail(request, pk):
-    print(pk)
-    print(Action.objects.filter(objective_id=pk).count)
-    return render(request, 'Objective/objective_detail.html', {'actions': Action.objects.filter(objective_id=pk)})
+    return render(request, 'Objective/objective_detail.html',
+                  {'actions': Action.objects.filter(objective_id=pk), 'objective': Objective.objects.get(id=pk)})
