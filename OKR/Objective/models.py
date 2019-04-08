@@ -8,6 +8,8 @@ class Objective(models.Model):
     key_result = models.CharField(max_length=200)
     self_assessment_score = models.IntegerField(default=0)
     leader_assessment_score = models.IntegerField(default=0)
+    code = models.CharField(max_length=20, default='')
+    time_description = models.CharField(max_length=20, default='')
 
     def __str__(self):
         return self.objective
