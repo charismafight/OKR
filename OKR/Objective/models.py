@@ -22,10 +22,10 @@ STATUS_CHOICE = (
 
 class Action(models.Model):
     objective = models.ForeignKey(Objective, on_delete=models.CASCADE)
-    content = models.CharField(max_length=500)
+    content = models.CharField(max_length=500, default='')
     complete_date = models.DateField()
-    local_leader = models.CharField(max_length=10)
-    correlative_leader = models.CharField(max_length=10, null=True, blank=True)
+    local_leader = models.CharField(max_length=10, default='')
+    correlative_leader = models.CharField(max_length=10, blank=True, default='')
     status = models.IntegerField(choices=STATUS_CHOICE)
 
     def __str__(self):

@@ -14,22 +14,22 @@
 <table class="table table-hover table-bordered" style="width:60% !important" border="1">
     <tbody>
     <tr>
-        <td colspan="6" align="right">编号：研发部门O1KR1A1-1</td>
+        <td colspan="6" align="right">编号：研发部门O1KR1A1-1，这里是固定的，编号规则怎么制定</td>
     </tr>
     <tr>
-        <th colspan="6" align="center">研发部门2019上半年OKR实施表格</th>
+        <th colspan="6" align="center">研发部门2019上半年OKR实施表格，这里是固定的，如何取年份，如何取上下半年？</th>
     </tr>
     <tr>
         <td>部门</td>
-        <td colspan="5" align="center">研发</td>
+        <td colspan="5" align="center">{{ objective.department }}</td>
     </tr>
     <tr>
         <td>目标（Objective）</td>
-        <td colspan="5" align="center">建立完整的软件架构，实现快速可靠的版本迭代</td>
+        <td colspan="5" align="center">{{ objective.objective }}</td>
     </tr>
     <tr>
         <td>关键结果（Key result）</td>
-        <td colspan="5" align="center">后台产品新版本100%微服务化</td>
+        <td colspan="5" align="center">{{ objective.key_result }}</td>
     </tr>
     <tr>
         <td>
@@ -69,10 +69,17 @@
             <td>
                 {{ a.correlative_leader }}
             </td>
-            <td>
-                {{ a.status }}
+            <td class="
+                {% if a.status == 1 %}
+                p-3 mb-2 bg-warning
+                {% elif a.status %}
+p-3 mb-2 bg-success
+                {% else %}
+                p-3 mb-2 bg-danger
+{% endif %}">
             </td>
         </tr>
     {% endfor %}
     </tbody>
 </table>
+<a href="/">Go Back</a>
